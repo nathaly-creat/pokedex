@@ -1,0 +1,23 @@
+.container-navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 10px;
+    align-items: baseline;
+    border-bottom: 2px sandybrown solid;
+    width: 100%;
+    
+}
+
+.container-navbar-logo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: whitesmoke;
+    align-items: baseline;
+    font-size: 25px;
+}
+/* .container-search {
+   justify-content: center;
+} */
+
