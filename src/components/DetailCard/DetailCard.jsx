@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { AiOutlineArrowLeft } from 'react-icons/ai';
 
-function DetailCard() {
+function DetailCard({id, species}) {
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
 
+
+
+
   return (
-    <div>
-      <Button color="danger" onClick={toggle}>
-        Click Me
+    <div className='modal-container'>
+      <Button color="danger" onClick={toggle} >
+      ¡Pika acá..!
       </Button>
-      <Modal isOpen={modal} toggle={toggle} fullscreen>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+      <Modal isOpen={modal} toggle={toggle} fullscreen id={`id${id}`} species={`species${species}`}>
+        <ModalHeader toggle={toggle}>ID<p>{id}</p></ModalHeader>
         <ModalBody>
-          Mostrando informacion para el pokemon
+          Especie <p>{species}</p>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>
-            Do Something
-          </Button>{' '}
           <Button color="secondary" onClick={toggle}>
-            Cancel
+          <AiOutlineArrowLeft className='btn-return' />
           </Button>
         </ModalFooter>
       </Modal>
