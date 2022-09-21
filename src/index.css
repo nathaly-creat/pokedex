@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #313131;
+  background-color: rgba(245, 245, 245, 0.5);
 }
 
 code {
@@ -49,7 +49,7 @@ code {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 3rem 0.5rem;
+  /* padding: 3rem 0.5rem; */
 }
 .pokemon-container {
   display: flex;
@@ -113,4 +113,8 @@ h3 {
   padding: 0.5rem 1.5rem;
   min-width: 50%;
   margin-top: 1rem;
+}
+.modal-container {
+  place-items: center;
+  z-index: 1;
 }
