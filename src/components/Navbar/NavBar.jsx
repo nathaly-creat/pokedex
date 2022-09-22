@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavBar.css";
-import { Input } from "antd";
+// import { Input } from "antd";
 import logoPok from "../../../src/assets/image/logoPok.png";
 
 const NavBar = () => {
@@ -10,10 +10,10 @@ const NavBar = () => {
         <img src={logoPok} alt="Logo" width={35} /><br/>
         <p>Pokédex</p>
       </div>
-      <div className="container-search">
+      {/* <div className="container-search">
 
       <Input.Search placeholder="Buscar" />
-      </div>
+      </div> */}
     </div>
   );
 };
