@@ -1,30 +1,35 @@
-import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { AiOutlineArrowLeft } from 'react-icons/ai';
+import React, { useState } from "react";
+import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
+import TableCard from "./tableCard.jsx";
 
-function DetailCard({id, species}) {
+function DetailCard({ id, name, image, type, species, abilities, stats }) {
   const [modal, setModal] = useState(false);
-
   const toggle = () => setModal(!modal);
-
-
-
-
+  
   return (
-    <div className='modal-container'>
-      <Button color="danger" onClick={toggle} >
-      ¡Pika acá..!
+    <div className="modal-container">
+      <Button className="btn-details" color="danger" onClick={toggle}>
+        ¡Pika acá..!
       </Button>
-      <Modal isOpen={modal} toggle={toggle} fullscreen id={`id${id}`} species={`species${species}`}>
-        <ModalHeader toggle={toggle}>ID<p>{id}</p></ModalHeader>
+      <Modal className="modal-container-body" isOpen={modal} toggle={toggle}>
+        <ModalHeader toggle={toggle}>
+          <div className="number">
+            <small>ID: #0{id}</small>
+          </div>
+        </ModalHeader>
         <ModalBody>
-          Especie <p>{species}</p>
+          <img src={image} alt={name} />
+          <div className="detail-wrapper">
+            <h4>Nombre: {name}</h4>
+            <small>Type: {type}</small>
+            <p>Especie: {species}</p>
+          </div>
+          {/*Seccion de habilidades*/}
+          <div>
+            <TableCard id={id} abilities={abilities}  stats={stats} />
+          </div>
+            
         </ModalBody>
-        <ModalFooter>
-          <Button color="secondary" onClick={toggle}>
-          <AiOutlineArrowLeft className='btn-return' />
-          </Button>
-        </ModalFooter>
       </Modal>
     </div>
   );

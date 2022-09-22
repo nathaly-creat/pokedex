@@ -6,7 +6,7 @@ import NavBar from "./components/NavBar/NavBar.jsx";
 const App = () => {
   const [allPokemons, setAllPokemons] = useState([]);
   const [loadMore, setLoadMore] = useState(
-    "https://pokeapi.co/api/v2/pokemon?limit=1"
+    "https://pokeapi.co/api/v2/pokemon?limit=400"
   );
 
   const getAllPokemons = async () => {
@@ -21,8 +21,8 @@ const App = () => {
           `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
         );
         const data = await res.json();
-        console.log("viendo", data);
-        setAllPokemons((currentList) => [...currentList, data]);
+        console.log(data)
+        setAllPokemons((list) => [...list, data]);
         await allPokemons.sort((a, b) => a.id - b.id);
       });
     }
